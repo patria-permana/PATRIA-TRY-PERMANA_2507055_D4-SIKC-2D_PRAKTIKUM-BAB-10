@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -10,4 +11,8 @@ class Category extends Model
         'name',
         'description',
     ];
+
+    public function categories(): HasMany{
+        return $this->hasMany(Report::class);
+    }
 }

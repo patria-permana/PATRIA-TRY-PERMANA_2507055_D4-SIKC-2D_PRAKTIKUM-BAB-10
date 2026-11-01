@@ -3,23 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Report;
 
 class ReportController extends Controller
 {
     public function index()
     {
-        $judul = 'Data laporan fasilitas kota';
-        $laporan =[ 
-            ['id' => '1', 'fasilitas' => 'Lampu A', 'Status' => 'Aktif'],
-            ['id' => '2', 'fasilitas' => 'Lampu B', 'Status' => 'Non-Aktif'],
-            ['id' => '3', 'fasilitas' => 'Lampu C', 'Status' => 'Aktif']
-    
-    ];  
-        return view('reports.index', [
-            'judul' => $judul,
-            'laporan' => $laporan,
-        ]);
-    
+        $reports = Report::With(['user', 'category'])
+        ->latest()
+        ->paginate(10); 
+    return view('reports.index', compact('reports'));
     }
 
     public function show($id){

@@ -23,3 +23,6 @@ Route::get('/laporan', [HomeController::class, 'laporan'])->name('laporan');
 
 Route::resource('categories', CategoryController::class);
 
+Route::get('/reports', [ReportController::class, 'index'])
+    ->name('reports.index');
+
