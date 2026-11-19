@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"Tests\\Feature\\NavbarSmokeTest::test_admin_sees_kelola_kategori":0.108,"Tests\\Feature\\NavbarSmokeTest::test_normal_user_does_not_see_kelola_kategori":0.004,"Tests\\Feature\\NavbarSmokeTest::test_guest_can_view_home":0.003,"Tests\\Feature\\NavbarSmokeTest::test_role_middleware_allows_admin_and_blocks_user":0.524}}

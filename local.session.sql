@@ -1,0 +1,1 @@
+CREATE TABLE tabel_contoh;SELECT User FROM mysql.user;
